@@ -1,1 +1,89 @@
-/* Add styles here */
+:root {
+    --primary-color: #00bcd4;
+    --background-color: #1a1a1a;
+    --card-background: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --shadow-color: rgba(0, 188, 212, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    text-align: center;
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.numbers-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.number-ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+    animation: fadeIn 0.5s ease-in-out;
+    transform: scale(0);
+    animation-fill-mode: forwards;
+}
+
+.generate-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--shadow-color), inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.generate-btn:hover, .generate-btn:focus {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px var(--shadow-color), inset 0 0 15px rgba(255,255,255,0.3);
+    outline: none;
+}
+
+@keyframes fadeIn {
+    to {
+        transform: scale(1);
+    }
+}
