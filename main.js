@@ -51,23 +51,24 @@ function displayStocks(stocks) {
 }
 
 // Theme Toggle logic
-function updateThemeIcon(isLight) {
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
+function updateThemeIcon(isDark) {
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
 }
 
 function initTheme() {
     const savedTheme = localStorage.getItem('theme');
-    const isLight = savedTheme === 'light';
-    if (isLight) {
-        document.body.classList.add('light-mode');
+    // Default is light, only add dark-mode if saved as dark
+    const isDark = savedTheme === 'dark';
+    if (isDark) {
+        document.body.classList.add('dark-mode');
     }
-    updateThemeIcon(isLight);
+    updateThemeIcon(isDark);
 }
 
 themeToggle.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-mode');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    updateThemeIcon(isLight);
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeIcon(isDark);
 });
 
 generateBtn.addEventListener('click', () => {
