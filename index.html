@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>동물상 테스트 - 나를 닮은 동물은?</title>
+    <title>오늘의 한국 주식 추천 - 스마트한 투자 가이드</title>
+    <meta name="description" content="인공지능과 데이터 분석을 기반으로 하는 오늘의 한국 주식 추천 서비스입니다. 매일 업데이트되는 시장 동향과 종목 분석 정보를 확인하세요.">
     <meta name="google-adsense-account" content="ca-pub-5836644393357372">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5836644393357372"
      crossorigin="anonymous"></script>
@@ -11,40 +12,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- TensorFlow.js and Teachable Machine Image library -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
+    <header class="main-header">
+        <div class="header-container">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <p class="date-display" id="date-display"></p>
+            <h1>오늘의 한국 주식 추천</h1>
+        </div>
+    </header>
+
     <main class="container">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-        <p class="date-display" id="date-display"></p>
-        <h1>인공지능 동물상 테스트</h1>
-        <p class="subtitle">나는 어떤 동물을 닮았을까? 지금 바로 확인해보세요!</p>
+        <section class="intro-section">
+            <p class="intro-text">본 서비스는 최신 시장 데이터와 기술적 지표를 분석하여 매일 오전 투자자분들께 영감을 줄 수 있는 유망 종목을 선별하여 제공합니다. 성공적인 투자를 위한 첫 걸음을 시작해보세요.</p>
+        </section>
 
-        <div class="upload-container">
-            <div id="upload-area" class="upload-area">
-                <div class="upload-icon">📸</div>
-                <p>얼굴 사진을 올리거나 눌러서 선택하세요</p>
-                <img id="image-preview" class="image-preview" alt="Preview" style="display: none;">
+        <div id="stocks-container" class="stocks-container"></div>
+        <button id="generate-btn" class="generate-btn">새로운 추천 분석 받기</button>
+
+        <section class="guide-section">
+            <hr class="divider">
+            <h2>💡 투자 유의사항 및 가이드</h2>
+            <div class="guide-content">
+                <p>1. 모든 투자의 책임은 투자자 본인에게 있으며, 본 서비스는 정보 제공만을 목적으로 합니다.</p>
+                <p>2. 추천 종목은 시장 상황에 따라 변동될 수 있으므로 실시간 차트를 반드시 확인하시기 바랍니다.</p>
+                <p>3. 분산 투자와 손절매 원칙을 지키는 것이 장기적인 수익의 핵심입니다.</p>
             </div>
-            <input type="file" id="file-input" accept="image/*" hidden>
-        </div>
+        </section>
 
-        <div id="loading" class="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>AI가 분석 중입니다...</p>
-        </div>
-
-        <div id="result-container" class="result-container" style="display: none;">
-            <h2 id="result-message">분석 결과</h2>
-            <div id="label-container" class="label-container"></div>
-            <button id="retry-btn" class="generate-btn" style="margin-top: 20px;">다시 하기</button>
-        </div>
+        <section class="about-section">
+            <hr class="divider">
+            <h2>About Us</h2>
+            <p>우리는 데이터 기반의 스마트한 투자 문화를 지향합니다. 복잡한 주식 시장에서 개인 투자자들이 길을 잃지 않도록 핵심적인 분석 정보를 쉽고 빠르게 전달하는 것이 우리의 목표입니다.</p>
+        </section>
 
         <section class="contact-section">
             <hr class="divider">
-            <h2>제휴 문의</h2>
+            <h2>제휴 및 서비스 문의</h2>
             <form action="https://formspree.io/f/xqegwbno" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="email">이메일 주소</label>
@@ -64,6 +68,18 @@
             <script type="module" src="https://www.livere.org/livere-widget.js"></script>
         </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 스마트 주식 추천 서비스. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">개인정보 처리방침</a> | 
+                <a href="#">이용약관</a> | 
+                <a href="#">문의하기</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="main.js" type="module"></script>
 </body>
 </html>
