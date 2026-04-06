@@ -210,6 +210,11 @@ h1 {
     color: #ffffff;
 }
 
+.comments-section {
+    text-align: left;
+    margin-top: 20px;
+}
+
 @keyframes slideUp {
     to {
         opacity: 1;
