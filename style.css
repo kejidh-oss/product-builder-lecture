@@ -286,12 +286,53 @@ h2 {
     padding-left: 20px;
 }
 
+.share-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.share-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.share-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.share-btn.kakao { background-color: #FEE500; color: #3c1e1e; }
+.share-btn.x { background-color: #000000; color: #ffffff; }
+.share-btn.facebook { background-color: #1877F2; color: #ffffff; }
+.share-btn.link { background-color: #e0e0e0; color: #333333; }
+
 @media (max-width: 600px) {
     .container {
         margin: 20px;
         padding: 30px 20px;
     }
-    
+...    
     .stock-card {
         flex-direction: column;
         align-items: flex-start;

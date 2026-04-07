@@ -50,6 +50,41 @@ function displayStocks(stocks) {
     });
 }
 
+// SNS Sharing logic
+function shareToSNS(platform) {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('오늘의 한국 주식 추천 - AI 기반 스마트 투자 가이드');
+    let shareUrl = '';
+
+    switch (platform) {
+        case 'kakao':
+            // Kakao share using story (simple URL method)
+            shareUrl = `https://story.kakao.com/share?url=${url}`;
+            break;
+        case 'x':
+            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            break;
+        case 'link':
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('링크가 복사되었습니다!');
+            });
+            return;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+// Event Listeners for Sharing
+document.getElementById('share-kakao').addEventListener('click', () => shareToSNS('kakao'));
+document.getElementById('share-x').addEventListener('click', () => shareToSNS('x'));
+document.getElementById('share-facebook').addEventListener('click', () => shareToSNS('facebook'));
+document.getElementById('share-link').addEventListener('click', () => shareToSNS('link'));
+
 // Theme Toggle logic
 function updateThemeIcon(isDark) {
     themeToggle.textContent = isDark ? '☀️' : '🌙';
